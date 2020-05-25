@@ -14,7 +14,7 @@ public interface IAccountDao {
      * 查询所有
      * @return
      */
-    @Select("select * from account")
+    //@Select("select * from account")
     List<Account> findAll();
 
     /**

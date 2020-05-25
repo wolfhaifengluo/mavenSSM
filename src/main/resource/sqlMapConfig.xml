@@ -21,7 +21,11 @@
     </environments>
 
     <mappers>
+        <!--xml配置-->
+        <!--<mapper resource="cn/learnssm/dao/IAccountDao.xml"></mapper>-->
+        <!--注解配置-->
         <!--<mapper class="cn.learnssm.dao.IAccountDao"></mapper>-->
+        <!--都可以配置-->
         <package name="cn.learnssm.dao"/>
     </mappers>
 
