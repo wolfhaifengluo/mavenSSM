@@ -4,9 +4,12 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-    <properties resource="db.properties">
+    <properties resource="db.properties"></properties>
 
-    </properties>
+    <!--配置别名,配置后mapper.xml中resultType就可以不用写全限定类名，直接写类名就可以且不用区分大小写-->
+    <typeAliases>
+        <package name="cn.learnssm.dao"></package>
+    </typeAliases>
 
     <environments default="mysql">
         <environment id="mysql">
