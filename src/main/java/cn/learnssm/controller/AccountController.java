@@ -21,7 +21,7 @@ public class AccountController {
 
     @RequestMapping("/findAll")
     public String findAll(Model model){
-        System.out.println("AccountController执行了...");
+        System.out.println("AccountController执行了......");
         List<Account> list = as.findAll();
         model.addAttribute("list",list);
         return "list";
@@ -29,7 +29,7 @@ public class AccountController {
 
     @RequestMapping("/save")
     public void findAll(Account account, HttpServletResponse response, HttpServletRequest request) throws IOException {
-        System.out.println("AccountController执行了...");
+        System.out.println("AccountController执行了......");
         response.sendRedirect(request.getContextPath()+"/account/findAll");
         as.save(account);
         return;
