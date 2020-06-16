@@ -410,7 +410,7 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建" data-dismiss="modal" @click="myshowmodel"><i
+                                    <button type="button" class="btn btn-default" title="新建" data-dismiss="modal" @click="showmymodel"><i
                                             class="fa fa-file-o"></i> 新建
                                     </button>
                                     <button type="button" class="btn btn-default" title="删除"><i
@@ -472,7 +472,7 @@
                             <!--模态窗口-->
                             <div class="tab-pane" id="tab-model">
 
-                                <div id="myModalinsert" class="modal modal-primary" role="dialog">
+                                <div id="myModal" class="modal modal-primary" role="dialog">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -522,133 +522,14 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-outline" data-dismiss="modal">关闭</button>
-                                                <button type="button" class="btn btn-outline" data-dismiss="modal" @click="insert">保存</button>
+                                                <button id="insert" type="button" class="btn btn-outline" data-dismiss="modal" @click="insert">保存</button>
+                                                <button id="update" type="button" class="btn btn-outline" data-dismiss="modal" @click="update">修改</button>
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->
                                     </div>
-
                                     <!-- /.modal-dialog -->
                                 </div>
-
-                                <div id="myModalupdate" class="modal modal-primary" role="dialog">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span></button>
-                                                <h4 class="modal-title">用户信息</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="box-body">
-                                                    <div class="form-horizontal">
-
-
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">用户名:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.username">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">密码:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.password">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">性别:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.sex">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">年龄:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.age">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">邮箱:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.email">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline" data-dismiss="modal">关闭</button>
-                                                <button type="button" class="btn btn-outline" data-dismiss="modal" @click="update">修改</button>
-                                            </div>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-
-                                    <!-- /.modal-dialog -->
-                                </div>
-
-
-                                <div id="myModalfindById" class="modal modal-primary" role="dialog">
-                                    <div class="modal-dialog modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span></button>
-                                                <h4 class="modal-title">用户信息</h4>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <div class="box-body">
-                                                    <div class="form-horizontal">
-
-
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">用户名:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.username">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">密码:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.password">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">性别:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.sex">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">年龄:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.age">
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label class="col-sm-2 control-label">邮箱:</label>
-                                                            <div class="col-sm-5">
-                                                                <input type="text" class="form-control" v-model="user.email">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-outline" data-dismiss="modal">关闭</button>
-                                            </div>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-
-                                    <!-- /.modal-dialog -->
-                                </div>
-
                                 <!-- /.modal -->
                             </div>
                             <!--模态窗口/-->
@@ -659,7 +540,7 @@
                         <div class="pull-left">
                             <div class="form-group form-inline">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default" title="新建" data-dismiss="modal" @click="myshowmodel"><i
+                                    <button type="button" class="btn btn-default" title="新建" data-dismiss="modal" @click="showmymodel"><i
                                             class="fa fa-file-o" ></i> 新建
                                     </button>
                                     <button type="button" class="btn btn-default" title="删除"><i

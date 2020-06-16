@@ -26,11 +26,14 @@ new Vue({
         },
         findByIdforupdate:function (userid) {
             //在当前方法中定义一个变量，表明是vue对象
+            $("#myModal #insert").show()
+            $("#myModal #update").show()
             var _this = this;
             axios.get('/user/findById',{params:{id:userid}})
                 .then(function (response) {
                     _this.user = response.data;//响应数据给user赋值
-                    $("#myModalupdate").modal("show");
+                    $("#myModal #insert").hide()
+                    $("#myModal").modal("show");
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -42,7 +45,9 @@ new Vue({
             axios.get('/user/findById',{params:{id:userid}})
                 .then(function (response) {
                     _this.user = response.data;//响应数据给user赋值
-                    $("#myModalfindById").modal("show");
+                    $("#myModal #insert").hide()
+                    $("#myModal #update").hide()
+                    $("#myModal").modal("show");
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -70,7 +75,7 @@ new Vue({
                     console.log(error);
                 });
         },
-        myshowmodel:function(){
+        showmymodel:function(){
             var _this = this;
             _this.user = {id:"",
                 username:"",
@@ -78,7 +83,10 @@ new Vue({
                 email:"",
                 age:"",
                 sex:""};
-            $("#myModalinsert").modal("show");
+            $("#myModal #insert").show()
+            $("#myModal #update").show()
+            $("#myModal #update").hide()
+            $("#myModal").modal("show");
         }
     },
     created:function() {//当我们页面加载的时候触发请求，查询所有
